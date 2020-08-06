@@ -1,5 +1,6 @@
 # tictactoe
 web based [app](https://playtiktaktoe.herokuapp.com) made with ❤️ using flask.
+![Screenshot from 2020-08-06 16-02-26](https://user-images.githubusercontent.com/19623279/89531957-773d4c80-d80a-11ea-9d27-e1433a9d9d22.png)
 # Prerequistes 
 * Python3.x
 * flask
