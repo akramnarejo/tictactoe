@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic Tac Toe</title>
+        <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            .container{
+                margin-top: 40px;
+                margin-left: 580px;
+                max-width: 700px;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            td {
+                border: 1px solid black;
+                width: 220px;
+                height: 220px;
+                font-size: 50px;
+                text-align: center;
+            }
+            td > a {
+                font-size: 20px;
+                text-decoration-style: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="text-align: center;">Tic Tac Toe</h1>
+            <div>
+                <a href="{{url_for('reset')}}" style="text-decoration: none;">Reset Game</a>
+                
+            </div>
+
+            {% if draw %}
+                <div>
+                        <h1> Game Drawn</h1>
+                </div>
+            {% endif %}
+            {% if winnerFound %}
+                <div>
+                        <h1> WINNER is {{winner}}</h1>
+                </div>
+            {% endif %}
+            <table>
+                {% for i in range(3) %}
+                    <tr>
+                        {% for j in range(3) %}
+                            <td>
+                                {% if game[i][j] %}
+                                    {{ game[i][j] }}
+                                {% else %}
+                                    <a href="{{ url_for('play', row=i, col=j) }}" style="text-decoration: none;">Play {{turn}} here.</a>
+                                {% endif %}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+            <p style="font-size: medium;">Tweet me <a href="https://www.twitter.com/akramnarejo" style="text-decoration: none; font-size: medium;">@akramnarejo</a></p>
+        </div>
+    </body>
+</html>
