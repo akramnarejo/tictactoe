@@ -1,8 +1,9 @@
 # tictactoe
-web based [game](https://playtiktaktoe.herokuapp.com) made with ❤️ using flask.
+web based [app](https://playtiktaktoe.herokuapp.com) made with ❤️ using flask.
 # Prerequistes 
 * Python3.x
 * flask
+* flask-session
 # Installation
 create a virtual environment using pip
 * ```python3 -m venv env ```
